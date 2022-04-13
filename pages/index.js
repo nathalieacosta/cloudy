@@ -26,7 +26,7 @@ const Index = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col> 
             <h2 className={styles.join}>register now. best of all, it's free forever!</h2>
           </Col>
         </Row>
