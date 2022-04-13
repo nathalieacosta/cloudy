@@ -1,0 +1,29 @@
+.footer {
+    background-color: #2a2d52;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.links {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.links a {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.links a:hover {
+    color: #9393bc;
+}
+
+.nametag {
+    color: #ffffff;
+    margin: 10px;
+    text-align: center;
+}
+
