@@ -12,7 +12,7 @@
     -o-animation: fadeIn 3s;
     -ms-animation: fadeIn 3s;
     color: #150f55;
-    font-family: "Ubuntu";
+    font-family: "Ubuntu" !important;
     font-size: 100px;
     text-align: center;
 }

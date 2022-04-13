@@ -2,7 +2,7 @@
 
 .brand {
     color: #150f55;
-    font-family: "Ubuntu";
+    font-family: "Ubuntu" !important;
     font-size: 30px;
     padding: 20px;
 }
