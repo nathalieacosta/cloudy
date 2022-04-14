@@ -6,7 +6,7 @@ import Footer from "../components/layout/Footer";
 
 import styles from "../styles/Index.module.css";
 
-const Index = () => {
+export default function Index() {
   return (
     <Fragment>
       <Container fluid>
@@ -27,7 +27,9 @@ const Index = () => {
         </Row>
         <Row>
           <Col>
-            <h2 className={styles.join}>register now. best of all, it's free forever!</h2>
+            <h2 className={styles.join}>
+              register now. best of all, it's free forever!
+            </h2>
           </Col>
         </Row>
         <Row>
@@ -37,5 +39,3 @@ const Index = () => {
     </Fragment>
   );
 };
-
-export default Index;

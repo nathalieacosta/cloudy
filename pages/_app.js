@@ -1,13 +1,14 @@
-import Head from "next/head";
+import { SessionProvider } from "next-auth/react";
+
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps} }) {
   return (
     <div>
-      <Head>
-      </Head>
-      <Component {...pageProps} />
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
     </div>
   );
 }
