@@ -10,7 +10,7 @@ const Footer = () => {
       <Row>
         <Col className={styles.links}>
           <a href="https://github.com/nathalieacosta/cloudy">
-            <Image src={githubLogo} width={30} height={30}></Image>
+            <Image src={githubLogo} width={20} height={20}></Image>
           </a>
         </Col>
         <Col className={styles.nametag}>

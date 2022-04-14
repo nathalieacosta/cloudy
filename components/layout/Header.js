@@ -21,7 +21,7 @@ const Header = () => {
             </Link>
             <button className={styles.button}
               onClick={() =>
-                signIn("google", { callbackUrl: "http://localhost:3000/" })
+                signIn("google", { callbackUrl: "http://localhost:3000/dashboard" })
               }
             >
               Sign in
@@ -41,6 +41,9 @@ const Header = () => {
         <Nav className="me-auto">
           <Link href="/">
             <a className={styles.link}>Home</a>
+          </Link>
+          <Link href="/dashboard">
+            <a className={styles.link}>Dashboard</a>
           </Link>
           <button className={styles.button} onClick={() => signOut()}>Sign out</button>
         </Nav>
