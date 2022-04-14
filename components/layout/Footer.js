@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import githubLogo from "../public/github.png";
+import githubLogo from "../../public/githubLogo.png"
 
 import styles from "../../styles/Footer.module.css";
 
