@@ -1,9 +1,12 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "../../../lib/mongodb";
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client"
+
+const prisma = new PrismaClient();
 
 export default NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -11,11 +14,9 @@ export default NextAuth({
       checks: "both",
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),
   theme: {
     colorScheme: "light",
   },
-  database: process.env.MONGODB_URI,
   session: {
     strategy: "jwt",
     maxAge: 30 * 25 * 60 * 60,
