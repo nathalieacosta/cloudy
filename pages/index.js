@@ -28,7 +28,7 @@ export default function Index() {
         <Row>
           <Col>
             <h2 className={styles.join}>
-              register now. best of all, it's free forever!
+              sign in with google now. best of all, it's free forever!
             </h2>
           </Col>
         </Row>
@@ -38,4 +38,4 @@ export default function Index() {
       </Container>
     </Fragment>
   );
-};
+}
