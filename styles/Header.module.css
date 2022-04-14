@@ -9,7 +9,7 @@
   margin: 0;
   padding: 10px 12px;
   text-align: center;
-  transition: all 200ms;
+  transition: ease 0.3s ease;
 }
 
 .button:hover {
@@ -21,6 +21,7 @@
     font-family: "Ubuntu" !important;
     font-size: 30px;
     padding: 20px;
+    transition: 0.3s ease;
 }
 
 .brand:hover {
