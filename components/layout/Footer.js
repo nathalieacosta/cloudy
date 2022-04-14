@@ -8,7 +8,7 @@ const Footer = () => {
             <Container className={styles.footer} fluid>
                 <Row>
                     <Col className={styles.links}>
-                        <a href="https://github.com/nathalieacosta/cloudy"><Image src={"/../public/github.png"} width="30px" height="30px"></Image></a>
+                        <a href="https://github.com/nathalieacosta/cloudy"><Image src={"/../public/github.png"} width={30} height={30}></Image></a>
                     </Col>
                     <Col className={styles.nametag}>
                         <a>made with ♡ by nathalie acosta</a>
