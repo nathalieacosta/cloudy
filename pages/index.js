@@ -1,5 +1,4 @@
-import { Fragment } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
@@ -8,7 +7,6 @@ import styles from "../styles/Index.module.css";
 
 export default function Index() {
   return (
-    <Fragment>
       <Container fluid>
         <Row>
           <Header />
@@ -36,6 +34,5 @@ export default function Index() {
           <Footer />
         </Row>
       </Container>
-    </Fragment>
   );
 }
