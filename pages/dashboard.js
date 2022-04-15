@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { getSession, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 import Header from "../components/layout/Header";
@@ -55,7 +55,7 @@ export default function Dashboard() {
           <h1>Dashboard</h1>
           <p>Signed in as {session.user.name}</p>
           <button>
-            <Link href={`/journals/add`}>Add</Link>
+            <Link href={"/add"}>Add</Link>
           </button>
           </Col>
         </Row>
