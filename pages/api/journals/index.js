@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const result = await prisma.journal.create({
       data: {
         title: title,
-        mood: mood,
+        mood: parseInt(mood),
         content: content,
         user: {
           connectOrCreate: {
