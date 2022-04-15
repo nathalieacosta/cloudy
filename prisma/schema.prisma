@@ -44,6 +44,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  journals      Journal[]
 }
 
 model VerificationToken {
@@ -52,4 +53,14 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Journal {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  title        String
+  mood         Int
+  content      String?
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
