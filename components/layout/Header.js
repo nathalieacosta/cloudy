@@ -45,7 +45,7 @@ const Header = () => {
           <Link href="/dashboard">
             <a className={styles.link}>Dashboard</a>
           </Link>
-          <button className={styles.button} onClick={() => signOut()}>Sign out</button>
+          <button className={styles.button} onClick={() => signOut({ callbackUrl: "http://localhost:3000/"})}>Sign out</button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
