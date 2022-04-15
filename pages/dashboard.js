@@ -27,6 +27,23 @@ export default function Dashboard() {
       </Container>
     );
   }
+  if (status === "unauthenticated") {
+    return (
+      <Container fluid>
+        <Row>
+          <Header />
+        </Row>
+        <Row>
+          <Col>
+          <h1>Error: You must be signed in to view this page. Sign in by clicking the sign in button above.</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
+      </Container>
+    );
+  }
   if (status === "authenticated") {
     return (
       <Container fluid>
