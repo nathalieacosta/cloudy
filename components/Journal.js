@@ -1,19 +1,17 @@
-import Card from "react-bootstrap";
+import Card from "react-bootstrap/card";
 
-const Journal = ({ journal }) => {
+const Journal = ({ title, mood, content }) => {
   return (
     <Card>
       <Card.Header as="h5">Featured</Card.Header>
       <Card.Body>
-        <Card.Title>{journal.title}</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>
-          <h5>{journal.mood}</h5>
-          {journal.content}
+          {mood}
+          {content}
         </Card.Text>
       </Card.Body>
     </Card>
   );
 };
-
-
 export default Journal;

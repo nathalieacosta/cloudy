@@ -6,7 +6,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 
 export default function Add() {
-    const router = useRouter();
+  const router = useRouter();
   const [title, setTitle] = useState("");
   const [mood, setMood] = useState(0);
   const [content, setContent] = useState("");
