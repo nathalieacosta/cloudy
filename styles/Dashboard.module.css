@@ -1,0 +1,20 @@
+.add {
+  background-color: #fafafaa3;
+  border-radius: 8px;
+  border-width: 0;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.delete {
+    background-color: #989191a3;
+    border-radius: 8px;
+    border-width: 0;
+    margin: 10px;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+.add:hover, .delete:hover {
+  background-color: #b7b5b5b6;
+}

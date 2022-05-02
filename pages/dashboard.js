@@ -1,7 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { useSession } from "next-auth/react";
+import { useSession, getSession } from "next-auth/react";
 import Link from "next/link";
-import { useState } from "react";
+import { PrismaClient } from "@prisma/client";
+import { useRouter } from "next/router";
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
@@ -11,6 +12,21 @@ import styles from "../styles/Dashboard.module.css";
 
 export default function Dashboard(props) {
   const { data: session, status } = useSession();
+  const router = useRouter();
+
+  const deleteJournal = async (journalId) => {
+    const body = { journalId };
+    try {
+      await fetch("/api/journals", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      await router.push("/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   if (status === "loading") {
     return (
@@ -59,16 +75,31 @@ export default function Dashboard(props) {
           <Col>
             <h1>Dashboard</h1>
             <p>Signed in as {session.user.name}</p>
-            <button>
+            <button className={styles.add}>
               <Link href={"/add"}>Add</Link>
             </button>
           </Col>
         </Row>
+        <br></br>
         <Row>
           <Col>
-            {
-              <Journal title={props.journals.title} mood={props.journals.mood} content={props.journals.content} />
-            }
+            {props.journals.map((journal) => (
+              <div key={journal.id}>
+                <Journal
+                  createdAt={journal.createdAt}
+                  title={journal.title}
+                  mood={journal.mood}
+                  content={journal.content}
+                />
+                <button
+                  className={styles.delete}
+                  onClick={() => deleteJournal(journal.id)}
+                >
+                  Delete
+                </button>
+                <br></br>
+              </div>
+            ))}
           </Col>
         </Row>
         <Row>
@@ -79,11 +110,27 @@ export default function Dashboard(props) {
   }
 }
 
-export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/journals", {
-    method: "GET",
+export async function getServerSideProps(context) {
+  const prisma = new PrismaClient();
+  const session = await getSession(context);
+
+  const journals = await prisma.journal.findMany({
+    where: {
+      id: session.user.id,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
-  const journals = await res.text();
+  for (const element of journals) {
+    element.createdAt = element.createdAt.toString();
+    element.createdAt =
+      element.createdAt.split(" ")[1] +
+      " " +
+      element.createdAt.split(" ")[2] +
+      ", " +
+      element.createdAt.split(" ")[3];
+  }
   return {
     props: { journals },
   };

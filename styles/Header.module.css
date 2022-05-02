@@ -9,7 +9,7 @@
   margin: 0;
   padding: 10px 12px;
   text-align: center;
-  transition: ease 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .button:hover {

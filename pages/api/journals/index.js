@@ -5,14 +5,6 @@ const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   const session = await getSession({ req });
-  if (req.method === "GET") {
-    const journals = await prisma.user.findUnique({
-      where: {
-        id: session.user.id,
-      },
-    });
-    res.status(200).json(journals);
-  }
   if (req.method === "POST") {
     const { title, mood, content } = req.body;
     const result = await prisma.journal.create({
@@ -31,6 +23,15 @@ export default async function handler(req, res) {
             },
           },
         },
+      },
+    });
+    res.status(200).json(result);
+  }
+  if (req.method === "DELETE") {
+    const { journalId } = req.body;
+    const result = await prisma.journal.delete({
+      where: {
+        id: journalId,
       },
     });
     res.status(200).json(result);

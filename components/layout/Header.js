@@ -7,6 +7,16 @@ import styles from "../../styles/Header.module.css";
 const Header = () => {
   const { data: session } = useSession();
 
+  async function login(event) {
+    event.preventDefault();
+    await signIn("google", { callbackUrl: "http://localhost:3000/dashboard" });
+  }
+
+  async function logout(event) {
+    event.preventDefault();
+    await signOut({ callbackUrl: "http://localhost:3000/" });
+  }
+
   if (!session) {
     return (
       <Navbar expand="lg">
@@ -19,11 +29,7 @@ const Header = () => {
             <Link href="/">
               <a className={styles.link}>Home</a>
             </Link>
-            <button className={styles.button}
-              onClick={() =>
-                signIn("google", { callbackUrl: "http://localhost:3000/dashboard" })
-              }
-            >
+            <button className={styles.button} onClick={login}>
               Sign in
             </button>
           </Nav>
@@ -45,7 +51,9 @@ const Header = () => {
           <Link href="/dashboard">
             <a className={styles.link}>Dashboard</a>
           </Link>
-          <button className={styles.button} onClick={() => signOut({ callbackUrl: "http://localhost:3000/"})}>Sign out</button>
+          <button className={styles.button} onClick={logout}>
+            Sign out
+          </button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

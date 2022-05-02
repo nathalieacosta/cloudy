@@ -1,15 +1,16 @@
 import Card from "react-bootstrap/card";
+import { useRouter } from "next/router";
 
-const Journal = ({ title, mood, content }) => {
+import styles from "../styles/Dashboard.module.css"
+
+const Journal = ({ id, createdAt, title, mood, content }) => {
   return (
     <Card>
-      <Card.Header as="h5">Featured</Card.Header>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          {mood}
-          {content}
-        </Card.Text>
+        <Card.Title>{createdAt}</Card.Title>
+        <Card.Subtitle>mood: {mood}</Card.Subtitle>
+        <Card.Subtitle>title: {title}</Card.Subtitle>
+        <Card.Text>notes: {content}</Card.Text>
       </Card.Body>
     </Card>
   );
