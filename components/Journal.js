@@ -1,5 +1,4 @@
-import Card from "react-bootstrap/card";
-import { useRouter } from "next/router";
+import Card from "react-bootstrap/Card";
 
 import styles from "../styles/Dashboard.module.css"
 
