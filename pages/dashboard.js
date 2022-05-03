@@ -124,7 +124,7 @@ export async function getServerSideProps(context) {
 
   const journals = await prisma.journal.findMany({
     where: {
-      id: session.user.id,
+      user: session.user,
     },
     orderBy: {
       createdAt: "desc",

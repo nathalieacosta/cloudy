@@ -13,14 +13,9 @@ export default async function handler(req, res) {
         mood: parseInt(mood),
         content: content,
         user: {
-          connectOrCreate: {
-            where: {
-              id: session.user.id,
-              email: session.user.email,
-            },
-            create: {
-              id: session.user.id,
-            },
+          connect: {
+            id: session.user.id,
+            email: session.user.email,
           },
         },
       },
