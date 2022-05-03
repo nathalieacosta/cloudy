@@ -60,7 +60,7 @@ export default function Statistics(props) {
         </Row>
         <Row>
           <Col>
-            Average Mood:{" "}
+            Average Mood:
             {isNaN(props.averageMood) ? (
               <span>Create journals to see an average mood here!</span>
             ) : (
@@ -69,7 +69,7 @@ export default function Statistics(props) {
           </Col>
         </Row>
         <Row>
-          <Col></Col>
+          <Col>Percent of Journals You Slept Enough: {props.percentSleep}%</Col>
         </Row>
         <Row>
           <Footer />
@@ -98,17 +98,20 @@ export async function getServerSideProps(context) {
   });
 
   let totalMood = 0;
+  let sleptEnough = 0;
   let totalJournals = 0;
-  const moods = [];
 
   for (const element of journals) {
     totalMood += element.mood;
-    moods.push({ mood: element.mood, total: element.mood });
+    if (element.sleep > 0) {
+      sleptEnough++;
+    }
     totalJournals++;
   }
   let averageMood = (totalMood / totalJournals).toFixed(3);
+  let percentSleep = (sleptEnough / totalJournals) * 100;
 
   return {
-    props: { totalJournals, totalMood, averageMood, moods },
+    props: { totalJournals, totalMood, averageMood, percentSleep },
   };
 }

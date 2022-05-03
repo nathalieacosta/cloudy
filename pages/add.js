@@ -11,7 +11,7 @@ export default function Add() {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [mood, setMood] = useState(0);
-  const [sleep, setSleep] = useState(true);
+  const [sleep, setSleep] = useState(1);
   const [content, setContent] = useState("");
 
   const submitJournal = async (event) => {
@@ -37,7 +37,7 @@ export default function Add() {
       <Row>
         <form onSubmit={submitJournal}>
           <Col className={styles.header}>
-            <h1>How are you feeling today?</h1>
+            <h1>how are you feeling today?</h1>
           </Col>
           <Col className={styles.input}>
             {" "}
@@ -63,7 +63,7 @@ export default function Add() {
           </Col>
           <Col className={styles.input}>
             <textarea
-              cols={50}
+              cols={35}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Type out your thoughts here if you'd like.."
               rows={8}
@@ -72,10 +72,9 @@ export default function Add() {
           </Col>
           <Col className={styles.input}>
             <span>Slept 8 or more hours?</span>
-            <input onChange={() => setSleep(true)} type="radio" name="sleep" checked="checked"/>
-            <label for="True">Yes</label>
-            <input onChange={() => setSleep(false)} type="radio" name="sleep"/>
-            <label for="False">No</label>
+            <br></br>
+            <input onChange={() => setSleep(1)} type="radio" name="sleep" value="1" checked="checked"/>Yes
+            <input onChange={() => setSleep(0)} type="radio" value="0" name="sleep"/>No
           </Col>
           <Col className={styles.input}>
            <input className={styles.submit} type="submit" value="Submit" />

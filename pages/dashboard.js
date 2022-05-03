@@ -90,8 +90,8 @@ export default function Dashboard(props) {
                   createdAt={journal.createdAt}
                   title={journal.title}
                   mood={journal.mood}
-                  sleep={journal.sleep}
                   content={journal.content}
+                  sleep={journal.sleep > 0 ? "yes" : "no"}
                 />
                 <button
                   className={styles.delete}
