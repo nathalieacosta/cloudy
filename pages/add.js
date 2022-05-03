@@ -17,7 +17,7 @@ export default function Add() {
   const submitJournal = async (event) => {
     event.preventDefault();
     try {
-      const body = { title, mood, content };
+      const body = { title, mood, sleep, content };
       await fetch("/api/journals", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -72,7 +72,7 @@ export default function Add() {
           </Col>
           <Col className={styles.input}>
             <span>Slept 8 or more hours?</span>
-            <input onChange={() => setSleep(true)} type="radio" name="sleep"/>
+            <input onChange={() => setSleep(true)} type="radio" name="sleep" checked="checked"/>
             <label for="True">Yes</label>
             <input onChange={() => setSleep(false)} type="radio" name="sleep"/>
             <label for="False">No</label>

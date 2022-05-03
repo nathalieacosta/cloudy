@@ -9,7 +9,7 @@ const Journal = ({ createdAt, title, mood, content, sleep }) => {
       <Card.Body>
         <Card.Subtitle>mood: {mood}</Card.Subtitle>
         <Card.Subtitle>title: {title}</Card.Subtitle>
-        <Card.Subtitle>slept 8 or moure hours: {sleep}</Card.Subtitle>
+        <Card.Subtitle>slept 8 or more hours: {sleep}</Card.Subtitle>
         <Card.Text>notes: {content}</Card.Text>
       </Card.Body>
     </Card>
