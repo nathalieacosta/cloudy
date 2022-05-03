@@ -11,6 +11,7 @@ export default function Add() {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [mood, setMood] = useState(0);
+  const [sleep, setSleep] = useState(true);
   const [content, setContent] = useState("");
 
   const submitJournal = async (event) => {
@@ -70,7 +71,14 @@ export default function Add() {
             />
           </Col>
           <Col className={styles.input}>
-            <input className={styles.submit} type="submit" value="Submit" />
+            <span>Slept 8 or more hours?</span>
+            <input onChange={() => setSleep(true)} type="radio" name="sleep"/>
+            <label for="True">Yes</label>
+            <input onChange={() => setSleep(false)} type="radio" name="sleep"/>
+            <label for="False">No</label>
+          </Col>
+          <Col className={styles.input}>
+           <input className={styles.submit} type="submit" value="Submit" />
           </Col>
         </form>
       </Row>

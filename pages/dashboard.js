@@ -75,6 +75,7 @@ export default function Dashboard(props) {
           <Col>
             <h1>Dashboard</h1>
             <p>Signed in as {session.user.name}</p>
+            <h5>Add a journal about your day and track your mood over time!</h5>
             <button className={styles.add}>
               <Link href={"/add"}>Add</Link>
             </button>
@@ -89,6 +90,7 @@ export default function Dashboard(props) {
                   createdAt={journal.createdAt}
                   title={journal.title}
                   mood={journal.mood}
+                  sleep={journal.sleep}
                   content={journal.content}
                 />
                 <button

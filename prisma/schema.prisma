@@ -43,6 +43,7 @@ model Journal {
   createdAt    DateTime @default(now())
   title        String
   mood         Int
+  sleep        Boolean
   content      String?
   userId       String
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
