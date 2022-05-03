@@ -51,6 +51,9 @@ const Header = () => {
           <Link href="/dashboard">
             <a className={styles.link}>Dashboard</a>
           </Link>
+          <Link href="/statistics">
+            <a className={styles.link}>Statistics</a>
+          </Link>
           <button className={styles.button} onClick={logout}>
             Sign out
           </button>

@@ -114,6 +114,14 @@ export async function getServerSideProps(context) {
   const prisma = new PrismaClient();
   const session = await getSession(context);
 
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/",
+      },
+    };
+  }
+
   const journals = await prisma.journal.findMany({
     where: {
       id: session.user.id,

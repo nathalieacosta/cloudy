@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 
 import styles from "../styles/Dashboard.module.css"
 
-const Journal = ({ id, createdAt, title, mood, content }) => {
+const Journal = ({ createdAt, title, mood, content }) => {
   return (
     <Card>
       <Card.Body>
