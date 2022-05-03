@@ -59,11 +59,17 @@ export default function Statistics(props) {
           <Col>Total Amount of Journals: {props.totalJournals}</Col>
         </Row>
         <Row>
-          <Col>Average Mood: {props.averageMood}</Col>
+          <Col>
+            Average Mood:{" "}
+            {isNaN(props.averageMood) ? (
+              <span>Create journals to see an average mood here!</span>
+            ) : (
+              <span>{props.averageMood}</span>
+            )}
+          </Col>
         </Row>
         <Row>
-          <Col>
-          </Col>
+          <Col></Col>
         </Row>
         <Row>
           <Footer />
@@ -78,11 +84,11 @@ export async function getServerSideProps(context) {
   const session = await getSession(context);
 
   if (!session) {
-      return {
-          redirect: {
-              destination: "/",
-          }
-      }
+    return {
+      redirect: {
+        destination: "/",
+      },
+    };
   }
 
   const journals = await prisma.journal.findMany({
@@ -103,6 +109,6 @@ export async function getServerSideProps(context) {
   let averageMood = (totalMood / totalJournals).toFixed(3);
 
   return {
-    props: { totalJournals, totalMood, averageMood, moods},
+    props: { totalJournals, totalMood, averageMood, moods },
   };
 }
