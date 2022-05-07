@@ -64,7 +64,7 @@ export default function Statistics(props) {
             {isNaN(props.averageMood) ? (
               <span>Create journals to see an average mood here!</span>
             ) : (
-              <span>{props.averageMood}</span>
+              <span> {props.averageMood}</span>
             )}
           </Col>
         </Row>
