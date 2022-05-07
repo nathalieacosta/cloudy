@@ -24,5 +24,6 @@ Welcome to the source code for Cloudy, a mood tracker app built entirely on Next
 - `GOOGLE_CLIENT_ID`
 - `GOOGLE_SECRET`
 - `DATABASE_URL`
-3. Once everything is installed run `npm run dev`.
-4. Go to `localhost:3000` in your browser and access Cloudy!
+3. Run `npm install` to install all the dependencies.
+4. Once everything is installed run `npm run dev`.
+5. Go to `localhost:3000` in your browser and access Cloudy!
