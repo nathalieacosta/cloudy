@@ -1,4 +1,5 @@
 # USER'S MANUAL
+Project Presentation for CS50 URL: [https://youtu.be/M5Z7UHRo8Fo](https://youtu.be/M5Z7UHRo8Fo)
 ## INTRODUCTION
 Welcome to the source code for Cloudy, a mood tracker app built entirely on Next JS, a React JS framework. The implementation is fairly simple but I wanted to learn more about Node JS apps and the different libraries you can use to create a fully functional app that communicates with a real database and can be deployed as a real, useful website [(go to the online version of Cloudy here).](https://cloudy-mood-tracker.vercel.app/)
 ## TECHNOLOGIES USED
