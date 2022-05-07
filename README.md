@@ -19,10 +19,10 @@ Welcome to the source code for Cloudy, a mood tracker app built entirely on Next
 ## HOW TO RUN CLOUDY LOCALLY
 1. Make sure you have Node installed.
 2. Clone the code with `git clone https://github.com/nathalieacosta/cs50.git` and fill out the .env.local file with the following information (provided in the CS50 Zip submitted to Gradescope).
-- NEXTAUTH_SECRET
-- NEXTAUTH_URL=http://localhost:3000
-- GOOGLE_CLIENT_ID
-- GOOGLE_SECRET
-- DATABASE_URL
+- `NEXTAUTH_SECRET`
+- `NEXTAUTH_URL=http://localhost:3000`
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_SECRET`
+- `DATABASE_URL`
 3. Once everything is installed run `npm run dev`.
 4. Go to `localhost:3000` in your browser and access Cloudy!
